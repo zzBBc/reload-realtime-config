@@ -17,6 +17,7 @@ public class RealtimeConfig {
     public RealtimeConfig(String path, InstanceLoadConfig instance, LogConfig log) {
         this.log = log;
         this.path = path;
+        this.instance = instance;
     }
 
     // Return
@@ -30,7 +31,6 @@ public class RealtimeConfig {
         retriever.configStream().exceptionHandler(t -> {
             logError(t);
         }).handler(config -> {
-            // TODO Handle new value;
             log("\n Old config: \n" + realtimeConfig);
             // New configuration
             realtimeConfig = config;
