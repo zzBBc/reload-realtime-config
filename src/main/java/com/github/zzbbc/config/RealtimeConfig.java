@@ -1,6 +1,6 @@
 package com.github.zzbbc.config;
 
-import com.github.zzbbc.log.Log;
+import com.github.zzbbc.config.log.LogConfig;
 import com.github.zzbbc.utils.ConfigUtils;
 import io.vertx.config.ConfigRetriever;
 import io.vertx.config.ConfigRetrieverOptions;
@@ -9,12 +9,12 @@ import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 
 public class RealtimeConfig {
-    private Log log;
+    private LogConfig log;
     private JsonObject realtimeConfig;
     private String path;
     private InstanceLoadConfig instance;
 
-    public RealtimeConfig(String path, InstanceLoadConfig instance, Log log) {
+    public RealtimeConfig(String path, InstanceLoadConfig instance, LogConfig log) {
         this.log = log;
         this.path = path;
     }

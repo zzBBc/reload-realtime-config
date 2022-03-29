@@ -1,6 +1,6 @@
-package com.github.zzbbc.log;
+package com.github.zzbbc.config.log;
 
-public interface Log {
+public interface LogConfig {
     void log(String message);
 
     void logError(Exception exception);
