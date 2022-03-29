@@ -52,7 +52,7 @@
         </configuration>
       </plugin>
 
-      <plugin>
+      <!-- <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
         <executions>
           <execution>
@@ -75,7 +75,6 @@
         <artifactId>maven-jar-plugin</artifactId>
         <version>3.2.2</version>
         <configuration>
-          <!-- output file jar -->
           <outputDirectory>${project.basedir}</outputDirectory>
           <archive>
             <manifest>
@@ -85,7 +84,7 @@
             </manifest>
           </archive>
         </configuration>
-      </plugin>
+      </plugin>-->
     </plugins>
   </build>
 </project>

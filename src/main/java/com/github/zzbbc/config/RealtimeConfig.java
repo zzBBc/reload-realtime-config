@@ -6,15 +6,15 @@ import io.vertx.config.ConfigRetriever;
 import io.vertx.config.ConfigRetrieverOptions;
 import io.vertx.config.ConfigStoreOptions;
 import io.vertx.core.Vertx;
-import io.vertx.core.json.JsonArray;
 import io.vertx.core.json.JsonObject;
 
 public class RealtimeConfig {
     private Log log;
     private JsonObject realtimeConfig;
     private String path;
+    private InstanceLoadConfig instance;
 
-    public RealtimeConfig(String path, Log log) {
+    public RealtimeConfig(String path, InstanceLoadConfig instance, Log log) {
         this.log = log;
         this.path = path;
     }
@@ -35,14 +35,7 @@ public class RealtimeConfig {
             // New configuration
             realtimeConfig = config;
             log("\n New config: \n" + realtimeConfig);
-            String host = config.getString("server.host");
-
-            String port = config.getString("server.port");
-            System.out.println(host);
-            System.out.println(port);
-
-            String mutiple = config.getString("multiple.values");
-            System.out.println(mutiple);
+            instance.loadConfig(config);
         });
     }
 
