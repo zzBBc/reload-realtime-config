@@ -57,7 +57,7 @@ public class RealtimeConfig {
     public boolean firstTimeLoaded() {
         if (startLoad) {
             while (!firstTimeLoaded) {
-                LOGGER.info("Realtime loading...");
+                LOGGER.info("First time realtime loading...");
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
